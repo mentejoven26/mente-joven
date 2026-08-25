@@ -1,519 +1,760 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Mente Joven | Prevención y Esperanza</title>
+<title>Mente Joven | Prevención y Esperanza</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    body {
-      background: #f8f6ff;
-      color: #333;
-      line-height: 1.6;
-    }
+body{
+  background:#faf8ff;
+  color:#303044;
+}
 
-    header {
-      background: linear-gradient(135deg, #8e7dff, #b99cff);
-      color: white;
-      padding: 20px 8%;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.12);
-    }
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  padding:18px 7%;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(12px);
+  box-shadow:0 3px 20px rgba(60,40,100,.1);
+}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
+.logo{
+  font-size:22px;
+  font-weight:bold;
+  color:#6753c7;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 8px;
-      font-weight: bold;
-    }
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:25px;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+nav a{
+  color:#4d4960;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 8%;
-      background: linear-gradient(135deg, #eeeaff, #fff);
-    }
+nav a:hover{
+  color:#6753c7;
+}
 
-    .hero-content {
-      max-width: 850px;
-    }
+.hero{
+  min-height:100vh;
+  padding:140px 8% 80px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    radial-gradient(circle at 15% 20%, #ddd4ff 0, transparent 30%),
+    radial-gradient(circle at 85% 70%, #c9f4ed 0, transparent 30%),
+    linear-gradient(135deg,#f7f3ff,#ffffff);
+}
 
-    .hero h1 {
-      font-size: 55px;
-      color: #6554c0;
-      margin-bottom: 15px;
-    }
+.hero-content{
+  max-width:850px;
+}
 
-    .hero h2 {
-      font-size: 28px;
-      color: #8a78d8;
-      margin-bottom: 20px;
-    }
+.badge{
+  display:inline-block;
+  padding:9px 18px;
+  border-radius:30px;
+  background:#eee9ff;
+  color:#6753c7;
+  font-weight:bold;
+  margin-bottom:20px;
+}
 
-    .hero p {
-      font-size: 19px;
-      margin-bottom: 30px;
-      color: #555;
-    }
+.hero h1{
+  font-size:70px;
+  color:#604bc0;
+  margin-bottom:10px;
+}
 
-    .btn {
-      display: inline-block;
-      background: #7161d8;
-      color: white;
-      padding: 13px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 5px;
-      transition: 0.3s;
-    }
+.hero h2{
+  font-size:30px;
+  color:#8876d7;
+  margin-bottom:25px;
+}
 
-    .btn:hover {
-      transform: translateY(-3px);
-      background: #5747b7;
-    }
+.hero p{
+  font-size:20px;
+  color:#59576a;
+  margin-bottom:30px;
+}
 
-    section {
-      padding: 75px 8%;
-    }
+.btn{
+  display:inline-block;
+  padding:14px 26px;
+  border-radius:35px;
+  text-decoration:none;
+  font-weight:bold;
+  margin:6px;
+  transition:.3s;
+}
 
-    .title {
-      text-align: center;
-      color: #6554c0;
-      font-size: 34px;
-      margin-bottom: 15px;
-    }
+.btn-primary{
+  background:#6956ca;
+  color:white;
+}
 
-    .subtitle {
-      text-align: center;
-      max-width: 750px;
-      margin: 0 auto 45px;
-      color: #666;
-    }
+.btn-secondary{
+  background:white;
+  color:#6956ca;
+  border:2px solid #6956ca;
+}
 
-    .about {
-      background: white;
-    }
+.btn:hover{
+  transform:translateY(-4px);
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-    }
+section{
+  padding:90px 8%;
+}
 
-    .card {
-      background: #fff;
-      padding: 30px 22px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 5px 20px rgba(100,80,160,0.12);
-      transition: 0.3s;
-    }
+.section-title{
+  text-align:center;
+  font-size:38px;
+  color:#604bc0;
+  margin-bottom:15px;
+}
 
-    .card:hover {
-      transform: translateY(-7px);
-    }
+.section-text{
+  text-align:center;
+  max-width:750px;
+  margin:0 auto 45px;
+  color:#686579;
+  font-size:18px;
+}
 
-    .icon {
-      font-size: 45px;
-      margin-bottom: 15px;
-    }
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:25px;
+  max-width:1100px;
+  margin:auto;
+}
 
-    .card h3 {
-      color: #6554c0;
-      margin-bottom: 10px;
-    }
+.card{
+  background:white;
+  padding:30px;
+  border-radius:25px;
+  box-shadow:0 8px 30px rgba(70,50,120,.1);
+  transition:.3s;
+}
 
-    .objective {
-      background: #eeeaff;
-    }
+.card:hover{
+  transform:translateY(-8px);
+}
 
-    .objective-box {
-      max-width: 900px;
-      margin: auto;
-      background: white;
-      padding: 35px;
-      border-radius: 25px;
-      box-shadow: 0 5px 20px rgba(100,80,160,0.12);
-      text-align: center;
-    }
+.icon{
+  font-size:45px;
+  margin-bottom:15px;
+}
 
-    .objective-box p {
-      font-size: 18px;
-    }
+.card h3{
+  color:#604bc0;
+  margin-bottom:10px;
+}
 
-    .activities {
-      background: white;
-    }
+.card p{
+  color:#666375;
+}
 
-    .activity {
-      text-align: left;
-    }
+.about{
+  background:white;
+}
 
-    .activity ul {
-      margin-top: 15px;
-      padding-left: 20px;
-    }
+.highlight{
+  background:#f0edff;
+}
 
-    .message {
-      background: linear-gradient(135deg, #8e7dff, #b99cff);
-      color: white;
-      text-align: center;
-    }
+.highlight-box{
+  max-width:950px;
+  margin:auto;
+  background:white;
+  padding:40px;
+  border-radius:30px;
+  text-align:center;
+  box-shadow:0 8px 30px rgba(70,50,120,.1);
+}
 
-    .message .title {
-      color: white;
-    }
+.highlight-box strong{
+  color:#604bc0;
+}
 
-    .message p {
-      max-width: 750px;
-      margin: auto;
-      font-size: 21px;
-    }
+.activities{
+  background:#fff;
+}
 
-    .contact {
-      background: #f8f6ff;
-      text-align: center;
-    }
+.activity-number{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#e9e3ff;
+  color:#604bc0;
+  font-weight:bold;
+  margin-bottom:15px;
+}
 
-    .contact-box {
-      max-width: 700px;
-      margin: auto;
-      background: white;
-      padding: 35px;
-      border-radius: 25px;
-      box-shadow: 0 5px 20px rgba(100,80,160,0.12);
-    }
+.video-section{
+  background:#f0edff;
+}
 
-    footer {
-      background: #4d438a;
-      color: white;
-      text-align: center;
-      padding: 25px;
-    }
+.video-container{
+  max-width:850px;
+  margin:auto;
+  background:white;
+  padding:15px;
+  border-radius:28px;
+  box-shadow:0 10px 35px rgba(70,50,120,.15);
+}
 
-    footer p {
-      margin: 5px;
-    }
+.video-container iframe{
+  width:100%;
+  height:480px;
+  border:0;
+  border-radius:20px;
+}
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 40px;
-      }
+.challenge{
+  background:white;
+  text-align:center;
+}
 
-      .hero h2 {
-        font-size: 23px;
-      }
+.challenge-box{
+  max-width:700px;
+  margin:auto;
+  padding:45px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ece6ff,#e5faf6);
+  box-shadow:0 8px 30px rgba(70,50,120,.1);
+}
 
-      nav {
-        justify-content: center;
-      }
+.challenge-box h3{
+  font-size:28px;
+  color:#604bc0;
+  margin-bottom:15px;
+}
 
-      nav a {
-        font-size: 14px;
-      }
-    }
-  </style>
+#reto{
+  margin:25px 0;
+  font-size:20px;
+  font-weight:bold;
+  color:#4f4a60;
+  min-height:60px;
+}
+
+.reflection{
+  background:#604bc0;
+  color:white;
+  text-align:center;
+}
+
+.reflection .section-title{
+  color:white;
+}
+
+.reflection p{
+  max-width:800px;
+  margin:auto;
+  font-size:22px;
+  line-height:1.7;
+}
+
+.juventudes{
+  background:linear-gradient(135deg,#e7f8f4,#f1ecff);
+  text-align:center;
+}
+
+.juventudes-box{
+  max-width:900px;
+  margin:auto;
+  background:white;
+  padding:50px 30px;
+  border-radius:30px;
+  box-shadow:0 10px 35px rgba(70,50,120,.12);
+}
+
+.juventudes-box h3{
+  font-size:32px;
+  color:#604bc0;
+  margin-bottom:15px;
+}
+
+footer{
+  background:#3f386d;
+  color:white;
+  text-align:center;
+  padding:35px 20px;
+}
+
+footer p{
+  margin:7px;
+}
+
+@media(max-width:700px){
+
+  nav ul{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .hero h2{
+    font-size:24px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  section{
+    padding:70px 6%;
+  }
+
+  .section-title{
+    font-size:30px;
+  }
+
+  .video-container iframe{
+    height:300px;
+  }
+}
+</style>
 </head>
+
 
 <body>
 
-  <header>
-    <nav>
-      <div class="logo">🌱 Mente Joven</div>
-
-      <div>
-        <a href="#inicio">Inicio</a>
-        <a href="#proyecto">Proyecto</a>
-        <a href="#actividades">Actividades</a>
-        <a href="#recursos">Recursos</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-    </nav>
-  </header>
+<header>
 
-  <section class="hero" id="inicio">
-    <div class="hero-content">
+<nav>
 
-      <h1>🌱 Mente Joven</h1>
+<div class="logo">
+🌱 Mente Joven
+</div>
 
-      <h2>Prevención y Esperanza</h2>
+<ul>
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#proyecto">Proyecto</a></li>
+<li><a href="#herramientas">Herramientas</a></li>
+<li><a href="#video">Video</a></li>
+<li><a href="#juventudes">Juventudes</a></li>
+</ul>
 
-      <p>
-        Un espacio creado para acompañar a las y los jóvenes,
-        fortalecer su bienestar emocional y recordarles que
-        pedir ayuda también es una forma de cuidarse.
-      </p>
-
-      <a class="btn" href="#proyecto">Conoce el proyecto</a>
-      <a class="btn" href="#recursos">Explorar recursos</a>
-
-    </div>
-  </section>
-
-
-  <section class="about" id="proyecto">
-
-    <h2 class="title">¿Qué es Mente Joven?</h2>
-
-    <p class="subtitle">
-      Mente Joven es un proyecto de prevención y promoción de la
-      salud mental dirigido principalmente a estudiantes de secundaria
-      y preparatoria.
-    </p>
-
-    <div class="cards">
-
-      <div class="card">
-        <div class="icon">💜</div>
-        <h3>Bienestar emocional</h3>
-        <p>
-          Aprender a reconocer, expresar y manejar nuestras emociones
-          de una manera saludable.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🌟</div>
-        <h3>Autoestima</h3>
-        <p>
-          Fortalecer la confianza personal y reconocer nuestras
-          capacidades y fortalezas.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🫶</div>
-        <h3>Autocuidado</h3>
-        <p>
-          Promover hábitos y decisiones que contribuyan al bienestar
-          físico, emocional y social.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🤝</div>
-        <h3>Redes de apoyo</h3>
-        <p>
-          Recordar que no tenemos que enfrentar las dificultades
-          completamente solos.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-
-  <section class="objective">
-
-    <h2 class="title">Nuestro objetivo</h2>
-
-    <div class="objective-box">
-
-      <p>
-        Fortalecer la salud mental de las y los jóvenes mediante
-        actividades educativas y participativas que permitan desarrollar
-        herramientas para reconocer emociones, fortalecer la autoestima,
-        practicar el autocuidado y prevenir conductas de riesgo.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <section class="activities" id="actividades">
-
-    <h2 class="title">Nuestras actividades</h2>
-
-    <p class="subtitle">
-      Aprender sobre nuestra salud mental también puede ser dinámico,
-      creativo y divertido.
-    </p>
-
-    <div class="cards">
-
-      <div class="card activity">
-        <div class="icon">😊</div>
-        <h3>Conociendo mis emociones</h3>
-        <p>
-          Actividades para identificar y comprender lo que sentimos.
-        </p>
-        <ul>
-          <li>Identificación emocional</li>
-          <li>Expresión de emociones</li>
-          <li>Herramientas de regulación</li>
-        </ul>
-      </div>
-
-      <div class="card activity">
-        <div class="icon">🌟</div>
-        <h3>Construyendo mi autoestima</h3>
-        <p>
-          Dinámicas para reconocer nuestras fortalezas y capacidades.
-        </p>
-        <ul>
-          <li>Fortalezas personales</li>
-          <li>Autoconocimiento</li>
-          <li>Confianza personal</li>
-        </ul>
-      </div>
-
-      <div class="card activity">
-        <div class="icon">🧘</div>
-        <h3>Aprendiendo a cuidarme</h3>
-        <p>
-          Reflexionamos sobre las diferentes formas de practicar
-          el autocuidado.
-        </p>
-        <ul>
-          <li>Hábitos saludables</li>
-          <li>Manejo del estrés</li>
-          <li>Tiempo para uno mismo</li>
-        </ul>
-      </div>
-
-      <div class="card activity">
-        <div class="icon">🚫</div>
-        <h3>Prevención de adicciones</h3>
-        <p>
-          Información y reflexión para tomar decisiones responsables
-          y buscar apoyo cuando sea necesario.
-        </p>
-        <ul>
-          <li>Factores de riesgo</li>
-          <li>Factores de protección</li>
-          <li>Redes de apoyo</li>
-        </ul>
-      </div>
+</nav>
 
-    </div>
+</header>
 
-  </section>
 
+<!-- INICIO -->
 
-  <section class="message">
+<section class="hero" id="inicio">
 
-    <h2 class="title">Tu salud mental importa 💜</h2>
+<div class="hero-content">
 
-    <p>
-      No tienes que tener todas las respuestas.
-      Hablar, preguntar, pedir ayuda y cuidar de ti también
-      son actos de valentía.
-    </p>
+<div class="badge">
+💜 Prevención • Educación • Esperanza
+</div>
 
-  </section>
+<h1>Mente Joven</h1>
 
+<h2>Prevención y Esperanza</h2>
 
-  <section id="recursos">
+<p>
+Un espacio para aprender sobre nuestras emociones,
+fortalecer nuestra autoestima y descubrir herramientas
+para cuidar nuestra salud mental.
+</p>
 
-    <h2 class="title">Recursos</h2>
+<a href="#proyecto" class="btn btn-primary">
+Conoce el proyecto
+</a>
 
-    <p class="subtitle">
-      Pequeñas acciones pueden ayudarnos a cuidar nuestro bienestar
-      emocional día a día.
-    </p>
+<a href="#herramientas" class="btn btn-secondary">
+Explora
+</a>
 
-    <div class="cards">
+</div>
 
-      <div class="card">
-        <div class="icon">📝</div>
-        <h3>Conócete</h3>
-        <p>
-          Dedica un momento para reconocer cómo te sientes y qué necesitas.
-        </p>
-      </div>
+</section>
 
-      <div class="card">
-        <div class="icon">💬</div>
-        <h3>Habla con alguien</h3>
-        <p>
-          Compartir lo que sentimos con una persona de confianza
-          puede ser un primer paso.
-        </p>
-      </div>
 
-      <div class="card">
-        <div class="icon">🌿</div>
-        <h3>Cuida de ti</h3>
-        <p>
-          Busca espacios para descansar, realizar actividades que disfrutas
-          y mantener hábitos saludables.
-        </p>
-      </div>
+<!-- PROYECTO -->
 
-    </div>
+<section class="about" id="proyecto">
 
-  </section>
+<h2 class="section-title">
+¿Qué es Mente Joven?
+</h2>
 
+<p class="section-text">
 
-  <section class="contact" id="contacto">
+Mente Joven es una propuesta de prevención y promoción
+de la salud mental dirigida principalmente a adolescentes
+y jóvenes.
 
-    <h2 class="title">Mente Joven</h2>
+</p>
 
-    <div class="contact-box">
+<div class="cards">
 
-      <p>
-        🌱 <strong>Prevención.</strong>
-        💜 <strong>Educación.</strong>
-        🌟 <strong>Esperanza.</strong>
-      </p>
+<div class="card">
 
-      <br>
+<div class="icon">🧠</div>
 
-      <p>
-        Porque cuidar nuestra mente también es construir
-        un mejor futuro.
-      </p>
+<h3>Conoce tu mente</h3>
 
-    </div>
+<p>
+Comprende mejor lo que piensas, sientes y experimentas.
+</p>
 
-  </section>
+</div>
 
 
-  <footer>
+<div class="card">
 
-    <p><strong>🌱 Mente Joven – Prevención y Esperanza</strong></p>
+<div class="icon">💜</div>
 
-    <p>Creando espacios para hablar, aprender y crecer.</p>
+<h3>Fortalece tu autoestima</h3>
 
-    <p>© 2026 Mente Joven</p>
+<p>
+Reconoce tus capacidades, fortalezas y aquello que te hace único.
+</p>
 
-  </footer>
+</div>
+
+
+<div class="card">
+
+<div class="icon">🌿</div>
+
+<h3>Cuida de ti</h3>
+
+<p>
+Descubre formas saludables de cuidar tu bienestar emocional.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🤝</div>
+
+<h3>Construye redes</h3>
+
+<p>
+Identifica personas y espacios que pueden acompañarte.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- OBJETIVO -->
+
+<section class="highlight">
+
+<h2 class="section-title">
+Nuestro propósito
+</h2>
+
+<div class="highlight-box">
+
+<p>
+
+<strong>Mente Joven</strong> busca acercar herramientas de
+educación emocional a las y los jóvenes mediante actividades
+participativas que permitan prevenir riesgos, fortalecer factores
+de protección y promover el bienestar.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- HERRAMIENTAS -->
+
+<section class="activities" id="herramientas">
+
+<h2 class="section-title">
+Herramientas para tu bienestar
+</h2>
+
+<p class="section-text">
+Pequeñas herramientas pueden ayudarnos a conocernos mejor
+y tomar decisiones más conscientes.
+</p>
+
+
+<div class="cards">
+
+<div class="card">
+
+<div class="activity-number">01</div>
+
+<h3>Reconoce lo que sientes</h3>
+
+<p>
+Pregúntate: ¿Qué estoy sintiendo? ¿Qué pudo provocar esta emoción?
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="activity-number">02</div>
+
+<h3>Habla con alguien</h3>
+
+<p>
+Buscar apoyo no significa ser débil. Significa reconocer que
+no tenemos que resolver todo solos.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="activity-number">03</div>
+
+<h3>Practica el autocuidado</h3>
+
+<p>
+Busca momentos para descansar, expresarte, convivir y realizar
+actividades que disfrutas.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="activity-number">04</div>
+
+<h3>Aléjate de los riesgos</h3>
+
+<p>
+Conocer los factores de riesgo puede ayudarte a tomar decisiones
+más saludables y responsables.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VIDEO -->
+
+<section class="video-section" id="video">
+
+<h2 class="section-title">
+🎬 Zona Mente Joven
+</h2>
+
+<p class="section-text">
+
+Un mensaje para reflexionar, compartir y recordar que
+nuestra salud mental también merece atención.
+
+</p>
+
+<div class="video-container">
+
+<iframe
+src="https://www.youtube.com/embed/-tiOggUMtc0"
+title="Video Mente Joven"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</section>
+
+
+<!-- RETO -->
+
+<section class="challenge">
+
+<h2 class="section-title">
+🎯 Reto Mente Joven
+</h2>
+
+<p class="section-text">
+
+¿Te animas a realizar una pequeña acción por tu bienestar?
+
+</p>
+
+<div class="challenge-box">
+
+<h3>
+Tu reto de hoy 💜
+</h3>
+
+<div id="reto">
+Presiona el botón para descubrir tu reto.
+</div>
+
+<button class="btn btn-primary" onclick="nuevoReto()">
+✨ Dame un reto
+</button>
+
+</div>
+
+</section>
+
+
+<!-- REFLEXION -->
+
+<section class="reflection">
+
+<h2 class="section-title">
+💭 Un momento para reflexionar
+</h2>
+
+<p>
+
+No tienes que tener todas las respuestas.
+Aprender a conocerte, hablar sobre lo que sientes
+y buscar apoyo también forma parte de crecer.
+
+</p>
+
+</section>
+
+
+<!-- JUVENTUDES -->
+
+<section class="juventudes" id="juventudes">
+
+<h2 class="section-title">
+🚀 Más oportunidades para jóvenes
+</h2>
+
+<div class="juventudes-box">
+
+<h3>
+Juventudes Guanajuato
+</h3>
+
+<p>
+
+Encuentra convocatorias, programas, oportunidades,
+actividades y recursos dirigidos a las juventudes
+de Guanajuato.
+
+</p>
+
+<br>
+
+<a
+href="https://juventudesgente.guanajuato.gob.mx/"
+target="_blank"
+class="btn btn-primary">
+
+Conoce Juventudes Guanajuato 🚀
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+<strong>🌱 Mente Joven – Prevención y Esperanza</strong>
+</p>
+
+<p>
+Porque cuidar nuestra mente también es construir nuestro futuro.
+</p>
+
+<p>
+© 2026 Mente Joven
+</p>
+
+</footer>
+
+
+<script>
+
+const retos = [
+
+"Escribe tres cosas que valoras de ti. 💜",
+
+"Envía un mensaje bonito a alguien que aprecias. 💌",
+
+"Dedica cinco minutos a respirar y desconectarte. 🌿",
+
+"Piensa en una persona a quien puedas acudir cuando necesites apoyo. 🤝",
+
+"Escribe algo que hayas logrado y que te haga sentir orgulloso/a. 🌟",
+
+"Hoy date permiso de descansar un momento. ☁️",
+
+"Pregúntate: ¿qué necesito hoy para sentirme mejor? 💭",
+
+"Realiza una actividad que disfrutes durante unos minutos. 🎨"
+
+];
+
+
+function nuevoReto(){
+
+const indice =
+Math.floor(Math.random()*retos.length);
+
+document.getElementById("reto").innerText =
+retos[indice];
+
+}
+
+</script>
 
 </body>
 </html>
