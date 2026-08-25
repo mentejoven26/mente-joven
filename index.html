@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mente Joven | Prevención y Esperanza</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f8f6ff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #8e7dff, #b99cff);
+      color: white;
+      padding: 20px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 8%;
+      background: linear-gradient(135deg, #eeeaff, #fff);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      color: #6554c0;
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      font-size: 28px;
+      color: #8a78d8;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #7161d8;
+      color: white;
+      padding: 13px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #5747b7;
+    }
+
+    section {
+      padding: 75px 8%;
+    }
+
+    .title {
+      text-align: center;
+      color: #6554c0;
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 45px;
+      color: #666;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px 22px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(100,80,160,0.12);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+    }
+
+    .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #6554c0;
+      margin-bottom: 10px;
+    }
+
+    .objective {
+      background: #eeeaff;
+    }
+
+    .objective-box {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 25px;
+      box-shadow: 0 5px 20px rgba(100,80,160,0.12);
+      text-align: center;
+    }
+
+    .objective-box p {
+      font-size: 18px;
+    }
+
+    .activities {
+      background: white;
+    }
+
+    .activity {
+      text-align: left;
+    }
+
+    .activity ul {
+      margin-top: 15px;
+      padding-left: 20px;
+    }
+
+    .message {
+      background: linear-gradient(135deg, #8e7dff, #b99cff);
+      color: white;
+      text-align: center;
+    }
+
+    .message .title {
+      color: white;
+    }
+
+    .message p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 21px;
+    }
+
+    .contact {
+      background: #f8f6ff;
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 25px;
+      box-shadow: 0 5px 20px rgba(100,80,160,0.12);
+    }
+
+    footer {
+      background: #4d438a;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero h2 {
+        font-size: 23px;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">🌱 Mente Joven</div>
+
+      <div>
+        <a href="#inicio">Inicio</a>
+        <a href="#proyecto">Proyecto</a>
+        <a href="#actividades">Actividades</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+
+      <h1>🌱 Mente Joven</h1>
+
+      <h2>Prevención y Esperanza</h2>
+
+      <p>
+        Un espacio creado para acompañar a las y los jóvenes,
+        fortalecer su bienestar emocional y recordarles que
+        pedir ayuda también es una forma de cuidarse.
+      </p>
+
+      <a class="btn" href="#proyecto">Conoce el proyecto</a>
+      <a class="btn" href="#recursos">Explorar recursos</a>
+
+    </div>
+  </section>
+
+
+  <section class="about" id="proyecto">
+
+    <h2 class="title">¿Qué es Mente Joven?</h2>
+
+    <p class="subtitle">
+      Mente Joven es un proyecto de prevención y promoción de la
+      salud mental dirigido principalmente a estudiantes de secundaria
+      y preparatoria.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">💜</div>
+        <h3>Bienestar emocional</h3>
+        <p>
+          Aprender a reconocer, expresar y manejar nuestras emociones
+          de una manera saludable.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🌟</div>
+        <h3>Autoestima</h3>
+        <p>
+          Fortalecer la confianza personal y reconocer nuestras
+          capacidades y fortalezas.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🫶</div>
+        <h3>Autocuidado</h3>
+        <p>
+          Promover hábitos y decisiones que contribuyan al bienestar
+          físico, emocional y social.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>Redes de apoyo</h3>
+        <p>
+          Recordar que no tenemos que enfrentar las dificultades
+          completamente solos.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="objective">
+
+    <h2 class="title">Nuestro objetivo</h2>
+
+    <div class="objective-box">
+
+      <p>
+        Fortalecer la salud mental de las y los jóvenes mediante
+        actividades educativas y participativas que permitan desarrollar
+        herramientas para reconocer emociones, fortalecer la autoestima,
+        practicar el autocuidado y prevenir conductas de riesgo.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="activities" id="actividades">
+
+    <h2 class="title">Nuestras actividades</h2>
+
+    <p class="subtitle">
+      Aprender sobre nuestra salud mental también puede ser dinámico,
+      creativo y divertido.
+    </p>
+
+    <div class="cards">
+
+      <div class="card activity">
+        <div class="icon">😊</div>
+        <h3>Conociendo mis emociones</h3>
+        <p>
+          Actividades para identificar y comprender lo que sentimos.
+        </p>
+        <ul>
+          <li>Identificación emocional</li>
+          <li>Expresión de emociones</li>
+          <li>Herramientas de regulación</li>
+        </ul>
+      </div>
+
+      <div class="card activity">
+        <div class="icon">🌟</div>
+        <h3>Construyendo mi autoestima</h3>
+        <p>
+          Dinámicas para reconocer nuestras fortalezas y capacidades.
+        </p>
+        <ul>
+          <li>Fortalezas personales</li>
+          <li>Autoconocimiento</li>
+          <li>Confianza personal</li>
+        </ul>
+      </div>
+
+      <div class="card activity">
+        <div class="icon">🧘</div>
+        <h3>Aprendiendo a cuidarme</h3>
+        <p>
+          Reflexionamos sobre las diferentes formas de practicar
+          el autocuidado.
+        </p>
+        <ul>
+          <li>Hábitos saludables</li>
+          <li>Manejo del estrés</li>
+          <li>Tiempo para uno mismo</li>
+        </ul>
+      </div>
+
+      <div class="card activity">
+        <div class="icon">🚫</div>
+        <h3>Prevención de adicciones</h3>
+        <p>
+          Información y reflexión para tomar decisiones responsables
+          y buscar apoyo cuando sea necesario.
+        </p>
+        <ul>
+          <li>Factores de riesgo</li>
+          <li>Factores de protección</li>
+          <li>Redes de apoyo</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="message">
+
+    <h2 class="title">Tu salud mental importa 💜</h2>
+
+    <p>
+      No tienes que tener todas las respuestas.
+      Hablar, preguntar, pedir ayuda y cuidar de ti también
+      son actos de valentía.
+    </p>
+
+  </section>
+
+
+  <section id="recursos">
+
+    <h2 class="title">Recursos</h2>
+
+    <p class="subtitle">
+      Pequeñas acciones pueden ayudarnos a cuidar nuestro bienestar
+      emocional día a día.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">📝</div>
+        <h3>Conócete</h3>
+        <p>
+          Dedica un momento para reconocer cómo te sientes y qué necesitas.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💬</div>
+        <h3>Habla con alguien</h3>
+        <p>
+          Compartir lo que sentimos con una persona de confianza
+          puede ser un primer paso.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🌿</div>
+        <h3>Cuida de ti</h3>
+        <p>
+          Busca espacios para descansar, realizar actividades que disfrutas
+          y mantener hábitos saludables.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="contact" id="contacto">
+
+    <h2 class="title">Mente Joven</h2>
+
+    <div class="contact-box">
+
+      <p>
+        🌱 <strong>Prevención.</strong>
+        💜 <strong>Educación.</strong>
+        🌟 <strong>Esperanza.</strong>
+      </p>
+
+      <br>
+
+      <p>
+        Porque cuidar nuestra mente también es construir
+        un mejor futuro.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    <p><strong>🌱 Mente Joven – Prevención y Esperanza</strong></p>
+
+    <p>Creando espacios para hablar, aprender y crecer.</p>
+
+    <p>© 2026 Mente Joven</p>
+
+  </footer>
+
+</body>
+</html>
